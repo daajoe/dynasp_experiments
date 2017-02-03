@@ -12,7 +12,7 @@ saturate :- p(Y,X), s1(X), s2(Y).
 
 % Not a partition due to a set being terminal empty?
 % This is the case if the other set contains all terminal elements.
-%numVertices(N) :- N = #count{ X : terminalVertex(X) }.
+numVertices(N) :- N = #count{ X : terminalVertex(X) }.
 saturate :- N #count{ X : s1(X), terminalVertex(X) }, numVertices(N).
 saturate :- N #count{ X : s2(X), terminalVertex(X) }, numVertices(N).
 
